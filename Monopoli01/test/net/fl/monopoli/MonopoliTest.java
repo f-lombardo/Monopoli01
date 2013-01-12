@@ -1,0 +1,14 @@
+package net.fl.monopoli;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class MonopoliTest {
+
+  @Test
+  public void test() {
+    fail("Not yet implemented");
+  }
+
+}
