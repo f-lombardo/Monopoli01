@@ -4,13 +4,15 @@ import java.util.*;
 
 public class Monopoli {
 
-  private List<Squares> squares;
-  private List<Dice> diceList;
+  private BagOfDice dice;
   private List<Player> playerList;
+  private Display display;
+  private Board board;
 
-  public Monopoli(List<Squares> squares, List<Dice> diceList) {
-    this.squares = squares;
-    this.diceList = diceList;
+  public Monopoli(Board board, BagOfDice dice, Display display) {
+    this.board = board;
+    this.dice = dice;
+    this.display = display;
     this.playerList = new ArrayList<Player>();
   }
 

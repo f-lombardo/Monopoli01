@@ -11,7 +11,7 @@ public class BagOfDiceTest {
   public void test() {
     int a = 5;
     int b = 3;
-    BagOfDice bag = new BagOfDice(new FixedResultDice(a ), new FixedResultDice(b));
+    BagOfDice bag = new BagOfDice(new FixedResultDice(a), new FixedResultDice(b));
     assertThat(bag.roll(), is(a+b));
   }
 

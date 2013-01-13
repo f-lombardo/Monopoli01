@@ -1,5 +1,5 @@
 package net.fl.monopoli;
 
-public class Squares {
+public interface Display {
 
 }
