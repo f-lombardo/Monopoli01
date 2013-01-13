@@ -19,15 +19,27 @@ public class Board {
   }
 
   public void addPlayer(Player player) {
-    this.players.put(player, 0);
+    setPosition(player, 0);
   }
 
-  public Square status(Player franco) {
-    return square(this.players.get(franco));
+  public Square status(Player player) {
+    return square(currentSquareIndex(player));
+  }
+
+  private Integer currentSquareIndex(Player player) {
+    return this.players.get(player);
   }
 
   public Square square(int i) {
     return squares[i];
+  }
+
+  public void move(Player player, int movementSize) {
+    setPosition(player, (currentSquareIndex(player) + movementSize) % squares.length);
+  }
+
+  private void setPosition(Player player, int position) {
+    this.players.put(player, position);
   }
 
 }

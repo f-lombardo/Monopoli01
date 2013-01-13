@@ -14,6 +14,18 @@ public class BoardTest {
     board.addPlayer(franco);
     assertThat(board.status(franco), is(board.square(0)));
   }
+  
+  @Test
+  public void aPlayerCanMoveRoundlyOnTheBoard() {
+    int nrOfSquares = 40;
+    Board board = new Board(nrOfSquares);
+    Player franco = new Player("Franco");
+    board.addPlayer(franco);
+    board.move(franco, 1);
+    assertThat(board.status(franco), is(board.square(1)));
+    board.move(franco, nrOfSquares);
+    assertThat(board.status(franco), is(board.square(1)));
+  }
 
   @Test
   public void aBoarHasAsManySquaresAsInitiallyStated() throws Exception {
