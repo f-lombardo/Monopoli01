@@ -4,8 +4,10 @@ import java.util.*;
 
 public class MockDisplay implements Display {
 
-  public List<String> history = new ArrayList<String>(); 
+  private List<String> history = new ArrayList<String>(); 
 
+  private Iterator<String> historyIterator;
+  
   @Override
   public void showRoundNr(int roundNr) {
     history.add("" + roundNr);
@@ -26,4 +28,19 @@ public class MockDisplay implements Display {
     history.add(player + "#" + status);
   }
 
+  public String nextDisplayedString() {
+    initIterator();
+    return historyIterator.next();
+  }
+
+  private void initIterator() {
+    if (historyIterator == null) {
+      historyIterator = history.iterator();
+    }
+  }
+
+  public boolean hasOtherDisplayString() {
+    initIterator();
+    return historyIterator.hasNext();
+  }
 }
