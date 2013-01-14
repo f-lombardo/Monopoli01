@@ -14,7 +14,12 @@ public class Square {
   }
   
   @Override
-  public boolean equals(Object obj) {
-    return (obj instanceof Square && ((Square)obj).name.equals(name));
+  public boolean equals(Object other) {
+    return (other instanceof Square && ((Square)other).name.equals(name));
+  }
+  
+  @Override
+  public String toString() {
+    return this.name;
   }
 }
