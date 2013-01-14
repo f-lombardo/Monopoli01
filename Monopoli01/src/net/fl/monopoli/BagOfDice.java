@@ -16,4 +16,12 @@ public class BagOfDice {
     return result;
   }
 
+  public static BagOfDice ofDice(int nrOfDice, int sides) {
+    Dice[] dice = new Dice[nrOfDice];
+    for (int i = 0; i < dice.length; i++) {
+      dice[i] = new Dice(sides);
+    }
+    return new BagOfDice(dice);
+  }
+
 }
